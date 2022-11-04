@@ -1,0 +1,80 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 py-4 bg-white">
+      <h2>Detalles de distribucion</h2>
+      <form id="form2" class="overflow-auto" name="form2" #form="ngForm">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Producto</label>
+          <input
+            id="input4"
+            name="input4"
+            type="text"
+            class="form-control"
+            id="nombre"
+            placeholder="Nombre"
+            autofocus
+            [(ngModel)]="d_nombre"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripción/Imagen</label>
+          <input
+            id="input5"
+            name="input5"
+            class="form-control"
+            id="descripcion"
+            placeholder="Imagen"
+            [(ngModel)]="d_descripcionn"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="estado" class="form-label">Estado de entrega</label>
+          <input
+            id="input6"
+            name="input6"
+            type="text"
+            class="form-control"
+            id="estado"
+            [(ngModel)]="d_Stoke"
+          />
+        </div>
+        <div class="d-grid gap-2">
+          <button type="button" class="btn btn-success" (click)="addProducto()">
+            Guardar
+          </button>
+          <button class="btn btn-secondary">Limpiar</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 py-4 bg-white">
+      <h2>Lista de distribucion</h2>
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th class="centrado">Codigo</th>
+            <th class="centrado">Productos</th>
+            <th class="centrado">Imagen</th>
+            <th class="centrado">Estado</th>
+            <th class="centrado">Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pro of products; index as i">
+            <td class="centrado">{{ i }}</td>
+            <td class="centrado">{{ pro.name }}</td>
+            <td class="centrado">
+              <img [src]="pro.image" height="50px" alt="image" />
+              {{ pro.name }}
+            </td>
+            <td class="centrado">{{ pro.stock }}</td>
+            <td class="centrado">
+              <button class="btn btn-primary" (click)="deleteProduct(i)">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

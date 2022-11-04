@@ -1,0 +1,110 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">Multiservicios Michel</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="collapse.toggle()"
+      data-bs-toggle="collapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <ngx-navbar-collapse #collapse="ngxNavbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" (click)="collapse.toggle()" routerLink="/home"
+            >Inicio</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="collapse.toggle()">Nosotros</a>
+        </li>
+        <li class="nav-item dropdown" dropdown>
+          <a
+            class="nav-link dropdown-toggle"
+            dropdownToggle
+            id="categori-drop-down"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            aria-controls="drop-down-categori"
+          >
+            Comprar
+          </a>
+          <ul
+            class="dropdown-menu"
+            *dropdownMenu
+            aria-labelledby="drop-down-categori"
+          >
+            <li>
+              <a
+                class="dropdown-item"
+                (click)="collapse.toggle()"
+                routerLink="/shopping-cart"
+                routerLinkActive="active"
+                >Productos</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                (click)="collapse.toggle()"
+                routerLink="/production"
+                routerLinkActive="active"
+                >Comentar</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                (click)="collapse.toggle()"
+                routerLink="/products"
+                routerLinkActive="active"
+                >Contactar</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a
+                class="dropdown-item"
+                (click)="collapse.toggle()"
+                routerLinkActive=""
+                >-=-=-=-=-</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="collapse.toggle()" routerLink="/pedido"
+            >carrito compras</a
+          >
+        </li>
+      </ul>
+      <div class="icons nav-item">
+        <a
+          (click)="collapse.toggle()"
+          routerLink="/"
+          routerLinkActive="active"
+          class="fas fa-heart"
+        ></a>
+        <a
+          (click)="collapse.toggle()"
+          routerLink="/pedido"
+          routerLinkActive="active"
+          class="fas fa-shopping-cart"
+        ></a>
+        <a
+          (click)="collapse.toggle()"
+          routerLink="/login"
+          routerLinkActive="active"
+          class="fas fa-user"
+        ></a>
+        <a class="nav-link" (click)="collapse.toggle()" (click)="getOut()"
+            >Salir</a
+          >
+      </div>
+    </ngx-navbar-collapse>
+  </div>
+</nav>

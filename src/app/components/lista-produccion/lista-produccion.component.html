@@ -1,0 +1,15 @@
+<div class="spacioBott">
+  <img [src]="production.image" class="img-thumbnail" alt="image" />
+  <div>
+    <b>Descripción: </b> <i>{{ production.description }}</i>
+  </div>
+  <div>
+    <b>Producto: </b> <i>{{ production.name }}</i>
+  </div>
+  <div>
+    <b>Stock: </b> <i>{{ production.stock }}</i>
+  </div>
+  <button class="btn-btn-secondary" (click)="salvarVenta(production.id)">
+    Salva
+  </button>
+</div>

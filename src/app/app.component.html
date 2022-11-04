@@ -1,0 +1,17 @@
+<header>
+  <!-- <app-menu-user *ngIf="thisLoged" (unlogin)="updateLogin()"> -->
+  <app-menu-user>
+  </app-menu-user>
+</header>
+<main>
+  <!-- <app-login *ngIf="!thisLoged" (login)="updateLogin()"></app-login> -->
+  <!-- <router-outlet *ngIf="thisLoged"></router-outlet> -->
+  <router-outlet></router-outlet>
+
+</main>
+<aside>
+</aside>
+<footer class="footer">
+  <app-footer-user *ngIf="thisLoged">
+  </app-footer-user>
+</footer>

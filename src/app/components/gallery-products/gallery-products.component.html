@@ -1,0 +1,11 @@
+<p>Cantidad de insumos seleccionados: {{ seleccionados.length }}</p>
+<div class="row">
+  <h2>PRODUCTOS</h2>
+  <div class="col-6" *ngFor="let pro of elementos; index as i">
+    <div class="centrado">{{ pro.id }}</div>
+    <app-card-product
+      [product]="pro"
+      (pressSelect)="selectProduct($event)"
+    ></app-card-product>
+  </div>
+</div>

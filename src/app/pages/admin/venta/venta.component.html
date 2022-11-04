@@ -1,0 +1,203 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 py-4 bg-white">
+      <h2>
+        <p>Reporte de Ventas</p>
+        <p>Lista de productos selecionados</p>
+      </h2>
+      <table class="table table-white table-striped">
+        <thead>
+          <tr>
+            <th class="centrado">Imagen</th>
+            <th class="centrado">ID</th>
+            <th class="centrado">Detalles</th>
+            <th class="centrado">Producto</th>
+            <th class="centrado">Precio</th>
+            <th scope="col-2">Acciónes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pro of products; index as i">
+            <td class="centrado">
+              {{ i }}<img [src]="pro.image" height="50px" alt="image" />
+              {{ pro.name }}
+            </td>
+            <td class="centrado">{{ pro.description }}</td>
+            <td class="centrado">{{ pro.stock }}</td>
+            <td class="centrado">{{ pro.name }}</td>
+            <td>{{ pro.price }}</td>
+            <td class="centrado">
+              <button (click)="open(template3, i)">Ver</button>
+              <button type="button" (click)="open1(template2, i)">
+                Actualizar
+              </button>
+              <button (click)="eliminarProduct(i)">eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
+  -->
+      <ng-template #template2>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Modal</h4>
+          <button
+            type="button"
+            class="btn-close close pull-right"
+            aria-label="Close"
+            (click)="modalRef?.hide()"
+          >
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="formF" name="formF" #form="ngForm">
+            <h3 class="title-description">Actualizar datos producción</h3>
+            <div class="mb-3">
+              <label for="detalle" class="form-label title-description"
+                >Detalles de pedido</label
+              >
+              <input
+                id="input1"
+                name="input1"
+                type="text"
+                required
+                [(ngModel)]="d_nombre"
+                class="form-control"
+                id="detalle"
+                placeholder="Detalle"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="ruta" class="form-label title-description"
+                >Imagen</label
+              >
+              <input
+                id="input2"
+                name="input2"
+                type="text"
+                required
+                [(ngModel)]="d_nombre"
+                class="form-control"
+                id="ruta"
+                placeholder="Ruta de la Imagen"
+                autofocus
+              />
+            </div>
+            <div class="mb-3">
+              <label for="nombre" class="form-label title-description"
+                >Nombre de producto</label
+              >
+              <input
+                id="input3"
+                name="input3"
+                type="text"
+                required
+                [(ngModel)]="d_nombre"
+                class="form-control"
+                id="nombre"
+                placeholder="Nombre"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="porcentaje" class="form-label title-description"
+                >Porcentaje de proceso</label
+              >
+              <input
+                id="input4"
+                name="input4"
+                type="text"
+                required
+                [(ngModel)]="d_nombre"
+                class="form-control"
+                id="porcentaje"
+                placeholder="Porcentaje"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="estado" class="form-label title-description"
+                >Estado</label
+              >
+              <input
+                id="input4"
+                name="input4"
+                type="text"
+                required
+                [(ngModel)]="d_nombre"
+                class="form-control"
+                id="estado"
+                placeholder="Porcentaje"
+              />
+            </div>
+          </form>
+          <button
+            type="button"
+            class="btn btn-danger"
+            aria-label="Close"
+            (click)="modalRef?.hide()"
+          >
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+            Cancelar
+          </button>
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="actComprobante()"
+          >
+            Guardar
+          </button>
+        </div>
+      </ng-template>
+      <ng-template #template3>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Modal</h4>
+          <button
+            type="button"
+            class="btn-close close pull-right"
+            aria-label="Close"
+            (click)="modalRef?.hide()"
+          >
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body overflow-auto">
+          <form id="form3" class="overflow-auto" name="form3" #form="ngForm">
+            <h3 class="title-description">Detalles de venta</h3>
+            <div class="mb-3">
+              <label class="form-label title-description">{{
+                d_nombre
+              }}</label>
+            </div>
+            <div class="mb-3">
+              <img [src]="d_nombre" height="100px" alt="image" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label title-description">{{ d_nombre }}</label>
+            </div>
+            <div class="mb-3">
+              <label class="form-label title-description">{{
+                d_nombre
+              }}</label>
+            </div>
+            <div class="mb-3">
+              <label class="form-label title-description">{{ d_nombre }}</label>
+            </div>
+            <div class="mb-3">
+              <label class="form-label title-description">{{ d_nombre }}</label>
+            </div>
+          </form>
+        </div>
+        <button
+          type="button"
+          class="btn btn-danger"
+          aria-label="Close"
+          (click)="modalRef?.hide()"
+        >
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+          Cerrar
+        </button>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="spaBott">
+    <img [src]="product.image" class="img-thumbnail" alt="image" />
+    <div>
+      <strong>Descripción: </strong> 
+    </div>
+        <p>{{ product.description }}</p>
+        <p><strong>Producto: </strong>{{ product.name }}</p> 
+        <p><strong>Precio: </strong>{{ product.price }}</p> 
+        <p><strong>Stock:</strong> {{ product.stock }}</p>
+        <p *ngIf="product.categoria"><strong>Categoria:</strong> {{ product.categoria.name}}</p>  
+    <button class="btn-btn-secondary" (click)="selectProduct(product.id)">
+      Agregar a Carrito
+    </button>
+  </div>

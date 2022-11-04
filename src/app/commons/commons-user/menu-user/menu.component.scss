@@ -1,0 +1,23 @@
+//Variables
+$--green:#008000;
+$--yelow:#ffff00;
+.navbar{
+    /* define el espacio entre los items */
+    justify-content: space-between;
+}
+.icons{
+    a{
+        //quitar el subrayado
+        text-decoration:none;
+        /* tamaño de letra 20px */
+        font-size: 1.5rem;
+        /* definir el color */
+        color:rgb(24, 36, 3);
+        /* espaciado  15 px izq */
+        margin-left: 1rem;
+        &:hover{
+            /* pintar de color cuando el cursor pase sobre el item */
+            color: $--green;
+        }
+    }
+}

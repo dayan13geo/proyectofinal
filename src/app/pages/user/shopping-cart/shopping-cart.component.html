@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <h4>Productos en Venta</h4>
+    <div class="row">
+        <div class="col">
+            <app-filters></app-filters>
+        </div>
+        <div class="col-md-8">
+            <app-gallery-products [elementos]="products "></app-gallery-products>
+        </div >
+        <div class="col-2">
+            <app-gallery-cart></app-gallery-cart>
+        </div >
+    </div>
+</div>
